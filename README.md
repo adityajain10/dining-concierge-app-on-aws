@@ -6,7 +6,7 @@ We have support for Yelp-API with suggestions and real time chat. <br/>
 
 ## Chat Example
 
-![example](/temp/chat-example.png)
+![Screenshot](chat_example.png)
 
 ## Chat-ai application with AWS resources.
 
@@ -18,7 +18,7 @@ Suggestions: for food - yelp<br/>
 
 ## Chat Architecture Diagram
 
-![diagram](/temp/arch-diag.png)
+![diagram](/temp/architecture_diagram.png)
 
 
 ## Chat sneak peek
