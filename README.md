@@ -18,9 +18,9 @@ Suggestions: for food - yelp<br/>
 
 ## Chat Architecture Diagram
 
-![diagram](/temp/architecture_diagram.png)
+![Screenshot](/temp/architecture_diagram.png)
 
 
 ## Chat sneak peek
 
-![snap](/temp/chat-front.png)
+![Screenshot](/temp/chat-front.png)
