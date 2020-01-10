@@ -5,7 +5,7 @@ It is basic chat-bot application to interect with open APIs. We are focusing on 
 
 We have support for Yelp-API with suggestions and real time chat. <br/>
 
-## AWS Services Used
+## Services Used
 1. Amazon S3 - To host the frontend
 2. Amazon Lex - To create the bot
 3. API Gateway - To set up the API
@@ -14,26 +14,17 @@ We have support for Yelp-API with suggestions and real time chat. <br/>
 6. DynamoDB - To store the restaurant data collected using Yelp API
 7. Amazon SNS - to send restaurant suggestions to users through SMS
 8. Lambda - To send data from the frontend to API and API to Lex, validation, collecting restaurant data, sending suggestions using SNS.
+9. Yelp API - To get suggestions for food
+10. AWS Congito - For authentication
 
-
-## Chat-ai application with AWS resources.
-
-Authentication: AWS Congito<br/>
-Smart Chat: AWS Lex<br/>
-Server: AWS Lambda<br/>
-Caching: S3 Bucket<br/>
-Suggestions: for food - yelp<br/>
 
 ## Chat Architecture Diagram
-
 ![diagram](architecture_diagram.png)
 
 
 ## Chat sneak peek
-
 ![snap](chat-front.png)
 
 
 ## Chat Example
-
 ![example](chat_example.png)
