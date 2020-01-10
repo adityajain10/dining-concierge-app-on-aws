@@ -15,9 +15,6 @@ We have support for Yelp-API with suggestions and real time chat. <br/>
 7. Amazon SNS - to send restaurant suggestions to users through SMS
 8. Lambda - To send data from the frontend to API and API to Lex, validation, collecting restaurant data, sending suggestions using SNS.
 
-## Chat Example
-
-![example](chat_example.png)
 
 ## Chat-ai application with AWS resources.
 
@@ -35,3 +32,8 @@ Suggestions: for food - yelp<br/>
 ## Chat sneak peek
 
 ![snap](chat-front.png)
+
+
+## Chat Example
+
+![example](chat_example.png)
