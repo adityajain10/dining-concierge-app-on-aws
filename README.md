@@ -1,4 +1,4 @@
-# Chat-app
+# Dining-Concierge-Chat-App
 This is a serverless, micro service-driven web application created completely using AWS cloud services. The main application of this chatbot is to provide restaurant suggestions to its users based on the preferences provided to it through conversations.
 
 It is basic chat-bot application to interect with open APIs. We are focusing on popular use cases for the interaction and getting the real time data. As a user you will chat with amazon lex bot and get real time answers with the suggestion and recommandation.
