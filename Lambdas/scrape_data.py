@@ -1,18 +1,16 @@
-import json
-
-from botocore.vendored import requests
-from urlparse import urljoin
 import boto3
-from decimal import *
 import datetime
-from time import sleep
+import json
+from botocore.vendored import requests
+from decimal import *
 from elasticSearch import putRequests
+from time import sleep
+from urlparse import urljoin
 
 dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
 table = dynamodb.Table('yelp-restaurants')
 
-API_KEY= None
-
+API_KEY = None
 
 API_HOST = 'https://api.yelp.com'
 SEARCH_PATH = '/v3/businesses/search'
@@ -25,13 +23,13 @@ DEFAULT_LOCATION = 'Manhattan'
 restaurants = {}
 
 
-def search(cuisine,offset):
+def search(cuisine, offset):
     url_params = {
         'location': DEFAULT_LOCATION,
-        'offset' : offset,
+        'offset': offset,
         'limit': 50,
         'term': cuisine + " restaurants",
-        'sort_by' : 'rating'
+        'sort_by': 'rating'
     }
     return request(API_HOST, SEARCH_PATH, url_params=url_params)
 
@@ -45,8 +43,9 @@ def request(host, path, url_params=None):
 
     response = requests.request('GET', url, headers=headers, params=url_params)
     rjson = response.json()
-    #business_list = rjson['businesses']
+    # business_list = rjson['businesses']
     return rjson
+
 
 def addItems(data, cuisine):
     global restaurants
@@ -71,7 +70,7 @@ def addItems(data, cuisine):
                     rec.pop("phone", None)
                 if rec["image_url"] == "":
                     rec.pop("image_url", None)
-    
+
                 # print(rec)
                 batch.put_item(Item=rec)
                 sleep(0.001)
@@ -81,17 +80,19 @@ def addItems(data, cuisine):
 
 
 def scrape():
-    cuisines = ['italian', 'chinese', 'indian', 'american', 'mexican', 'spanish','greek','latin','Persian']
+    cuisines = ['italian', 'chinese', 'indian', 'american', 'mexican', 'spanish', 'greek', 'latin', 'Persian']
     for cuisine in cuisines:
         offset = 0
-        while offset<1000:
-            js = search(cuisine,offset)
+        while offset < 1000:
+            js = search(cuisine, offset)
             addItems(js["businesses"], cuisine)
-            offset+=50
+            offset += 50
+
+
 def lambda_handler(event, context):
     # TODO implement
     putRequests()
-    #scrape()
+    # scrape()
     return {
         'statusCode': 200,
         'body': json.dumps('Hello from Lambda!')
