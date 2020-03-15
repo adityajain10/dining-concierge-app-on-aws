@@ -133,7 +133,7 @@ We have support for Yelp-API with suggestions and real time chat.
 
 7. Build a suggestions module, that is decoupled from the Lex chatbot.
 
-    a. Create a new Lambda function (LF2) that acts as a queue worker. Whenever it is invoked it<br>
+    * Create a new Lambda function (LF2) that acts as a queue worker. Whenever it is invoked it<br>
         1. pulls a message from the SQS queue (Q1), <br>
         2. gets a random restaurant recommendation for the cuisine collected through conversation from ElasticSearch and DynamoDB, 
         3. formats them and<br>
@@ -144,7 +144,5 @@ We have support for Yelp-API with suggestions and real time chat.
                 ElasticSearch will have only a small subset of fields from each
                 restaurant.<br>
             ii. Modify the rest of the LF2 function if necessary to send the user text/email.
-    b. Set up a CloudWatch event trigger that runs every minute and invokes the
-       Lambda function as a result:
-        https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/RunLabdaSchedule.html. This automates the queue worker Lambda to poll and
-        process suggestion requests on its own.
+    * Set up a CloudWatch event trigger that runs every minute and invokes the Lambda function as a result:
+        https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/RunLabdaSchedule.html. This automates the queue worker Lambda to poll                and process suggestion requests on its own.
